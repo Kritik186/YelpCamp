@@ -18,7 +18,7 @@ var campgrounds=[
     {title:"Delhi",image: "https://picsum.photos/id/1019/300/300"},
     {title:"Ambala",image: "https://picsum.photos/id/1018/300/300"},
     {title:"Jammu",image: "https://picsum.photos/id/337/300/300"},
-    {title: "Kasauli", image: "img.jpeg"}
+
 ]
 
 app.get("/campgrounds",function(req,res){
@@ -36,7 +36,6 @@ app.post("/campgrounds",function(req,res){
 
 app.get("/campgrounds/new",function(req,res){
     res.render("newCampground")
-
 })
 
 app.listen(4000,function(){
