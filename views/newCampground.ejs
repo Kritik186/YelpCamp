@@ -1,4 +1,4 @@
-<%- include('partials/header.ejs') %>
+<% include('./partials/header') %>
 <h1>Create a new campground</h1>
 <form action="/campgrounds" method="post">
     <input type="text" placeholder="Enter yourtext here" name="name">
@@ -6,4 +6,4 @@
     <button>Submit</button>
 </form>
 <a href="/campgrounds">Go Back</a>
-<%- include('partials/footer.ejs') %>
+<% include('./partials/footer') %>
