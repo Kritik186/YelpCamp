@@ -32,7 +32,6 @@ var camp=mongoose.model("camp",campgroundSchema);
 //         console.log("Successfully added to the database");
 //     }
 // })
-
 app.get("/", function(req,res){
     res.render('landing');
 })
