@@ -18,20 +18,12 @@ app.use(express.static(path.join(__dirname, "public")));
 //database
 var campgroundSchema=mongoose.Schema({
     title: String,
-    image: String
+    image: String,
+    description: String
 });
 
 var camp=mongoose.model("camp",campgroundSchema);
-// camp.create({
-//     title:"Ambala",
-//     image: "https://picsum.photos/id/1018/300/300"
-// },function(err,camp){
-//     if(err){
-//         console.log("Error");
-//     }else{
-//         console.log("Successfully added to the database");
-//     }
-// })
+
 app.get("/", function(req,res){
     res.render('landing');
 })
@@ -49,15 +41,25 @@ app.get("/campgrounds",function(req,res){
 app.post("/campgrounds",function(req,res){
     var name=req.body.name;
     var image=req.body.url;
-    var newCamp={title:name, image:image};
+    var description=req.body.ds;
+    var newCamp={title:name, image:image, description:description};
     camp.create(newCamp,function(){
         res.redirect("/campgrounds")
     })
-    
 })
 
 app.get("/campgrounds/new",function(req,res){
     res.render("newCampground")
+})
+
+app.get("/campgrounds/:id",function(req,res){
+    camp.findById(req.params.id,function(err,found){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("show",{found:found})
+        }
+    })
 })
 
 app.listen(4000,function(){
