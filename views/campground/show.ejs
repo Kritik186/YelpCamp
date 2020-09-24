@@ -1,0 +1,10 @@
+<h1>Welcome to the show page</h1>
+<h2><%=found.title%></h2>
+<img src="<%=found.image%>">
+<p><%=found.description%></p>
+<p>
+    <a class="btn btn-primary" href="/campgrounds/<%=found._id%>/comments/new">Add a new comment</a>
+</p>
+<%found.comments.forEach(function(hoja){%>
+    <p><strong><%=hoja.author%> </strong>- <%=hoja.text%></p>
+<%})%>

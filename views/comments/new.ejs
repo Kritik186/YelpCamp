@@ -1,0 +1,25 @@
+<div class="container" style="width: 30%; margin: auto auto;">
+    <div class="row">
+        <h1><%=found.title%></h1>
+        <form action="/campgrounds/<%= found._id%>/comments" method="post">
+            <div class="form-group" >
+                <div class="form-group">
+                    <label for="1">New Comment</label>
+                    <input type="text" class="form-control"style="font-size: 1.5rem;" name="comment[text]" id="1" placeholder="Please Enter the name of the Blog Here">
+                </div>
+                
+                <div class="form-group">
+                    <label for="2">Author</label>
+                    <input type="text" id="2" class="form-control" style="font-size: 1.5rem;" name="comment[author]" placeholder="Enter the url of the image">
+                </div>
+                
+                <div>
+                    <button class="btn btn-primary">Submit your Blog</button>
+                </div>
+
+            </div>
+           
+        </form>
+    </div>
+    
+</div>
